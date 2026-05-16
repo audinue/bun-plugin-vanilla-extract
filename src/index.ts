@@ -158,3 +158,5 @@ export function vanillaExtractPlugin(options?: VanillaExtractPluginOptions): Bun
 
 export { cssFileFilter, compile } from '@vanilla-extract/integration';
 export { bunProcessVanillaFile } from './bun-process-vanilla';
+
+export default vanillaExtractPlugin;
