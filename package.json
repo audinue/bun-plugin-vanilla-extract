@@ -1,0 +1,51 @@
+{
+  "name": "@audinue/bun-plugin-vanilla-extract",
+  "version": "0.1.0",
+  "description": "Bun plugin for vanilla-extract - Zero-runtime Stylesheets-in-TypeScript",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target bun --external @vanilla-extract/integration && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "dev": "bun run build --watch",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "bun",
+    "plugin",
+    "vanilla-extract",
+    "css-in-js",
+    "zero-runtime",
+    "css",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@vanilla-extract/css": "^1.0.0",
+    "@vanilla-extract/integration": "^7.0.0",
+    "typescript": ">=4.0.0"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.0.0",
+    "@vanilla-extract/integration": "^7.0.0",
+    "javascript-stringify": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/audinue/bun-plugin-vanilla-extract"
+  }
+}
